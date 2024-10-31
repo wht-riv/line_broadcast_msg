@@ -12,12 +12,12 @@ if channel_access_token is None:
 
 configuration = Configuration(access_token=channel_access_token)
 
+# fmt: off
 with ApiClient(configuration) as api_client:
     line_bot_api = MessagingApi(api_client)
     line_bot_api.broadcast(
         BroadcastRequest(
-            messages=[
-                TextMessage(text="THIS IS A BROADCAST MESSAGE")
-            ]
+            messages=[TextMessage(text="THIS IS A BROADCAST MESSAGE")]
         )
     )
+# fmt: on
